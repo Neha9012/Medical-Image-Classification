@@ -1,0 +1,31 @@
+Pneumonia Detection from Chest X-Rays
+Objective: Classify chest X-ray images as pneumonia-positive or negative using the Chest X-Ray Images dataset.
+
+Steps:
+Data Preprocessing:
+
+Load Dataset: Import images from the Kaggle Chest X-Ray dataset.
+Normalization: Scale pixel values to [0, 1] by dividing by 255.
+Resizing: Resize images to 224x224 to be compatible with CNN models.
+Dataset Split: Split into training (70%), validation (15%), and test (15%).
+Data Augmentation:
+
+Apply augmentation techniques to improve model generalization:
+Random Cropping to vary image inputs.
+Rotation to simulate different patient orientations.
+Histogram Equalization to normalize the image brightness for better feature extraction.
+Model Development:
+
+Pre-trained Model: Use a pre-trained model like MobileNet or InceptionV3 for transfer learning.
+Fine-Tuning: Replace the final fully connected layer with a Dense layer for binary classification (pneumonia or healthy).
+Use softmax activation in the output layer for multi-class classification.
+Loss function: Categorical Crossentropy.
+Optimizer: Adam.
+Training: Train the model on the augmented dataset.
+Evaluation:
+
+Use metrics such as:
+Sensitivity (True Positive Rate).
+Specificity (True Negative Rate).
+ROC-AUC (Receiver Operating Characteristic curve and Area Under the Curve).
+Comparison: Compare results on augmented and non-augmented datasets.
